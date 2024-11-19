@@ -19,3 +19,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+}
