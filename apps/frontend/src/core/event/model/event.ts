@@ -2,7 +2,7 @@ import type Guest from './guest'
 
 export default interface Event {
   id: string
-  alias: string
+  slug: string
   password: string
   name: string
   date: Date
@@ -13,4 +13,3 @@ export default interface Event {
   expectedAudience: number
   guests: Guest[]
 }
-

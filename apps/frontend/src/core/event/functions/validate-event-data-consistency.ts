@@ -10,7 +10,7 @@ const validateEventDataConsistency = (partialEvent: Partial<Event>): Event => {
   const event: Event = {
     ...partialEvent,
     id: partialEvent.id ?? Id.new(),
-    alias: partialEvent.alias ?? '',
+    slug: partialEvent.slug ?? '',
     password: partialEvent.password ?? Password.create(20),
     name: partialEvent.name ?? '',
     date: partialEvent.date ?? new Date(),

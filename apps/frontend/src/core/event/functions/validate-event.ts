@@ -3,8 +3,8 @@ import { Event } from '@/core'
 
 const validateEvent = (event: Partial<Event>): string[] => {
   const errors: string[] = []
-  if (!event.alias) {
-    errors.push('Alias é obrigatorio')
+  if (!event.slug) {
+    errors.push('Slug é obrigatorio')
   }
   if (!event.expectedAudience || event.expectedAudience <= 0) {
     errors.push('Quantidade de pessoas é obrigatorio')

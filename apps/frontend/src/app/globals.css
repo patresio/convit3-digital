@@ -24,4 +24,34 @@ body {
   .container {
     @apply mx-auto px-4 max-w-7xl;
   }
+
+  .button {
+    @apply flex justify-center items-center;
+    @apply gap-2 rounded-md px-9 h-9;
+    @apply text-sm font-semibold;
+  }
+
+  .button.primary {
+    @apply bg-blue-500 text-white;
+  }
+
+  .button.primary:hover {
+    @apply bg-blue-600;
+  }
+
+  .button.secondary {
+    @apply bg-red-500 text-white;
+  }
+
+  .button.secondary:hover {
+    @apply bg-red-600;
+  }
+
+  .button.tertiary {
+    @apply bg-green-500 text-white;
+  }
+
+  .button.tertiary:hover {
+    @apply bg-green-600;
+  }
 }

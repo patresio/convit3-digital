@@ -3,7 +3,7 @@ import { Event, Id } from '@/core'
 export default function createEmptyEvent(): Partial<Event> {
   return {
     id: Id.new(),
-    alias: '',
+    slug: '',
     password: '',
     name: '',
     date: new Date(),

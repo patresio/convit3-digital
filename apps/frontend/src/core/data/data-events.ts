@@ -1,10 +1,9 @@
 import type { Event } from '../event'
-import { Id } from '../shared'
 
 const events: Event[] = [
   {
-    id: Id.new(),
-    alias: 'evento-fullstack',
+    id: '809xoae2dmv-tuad9sr7ce-vw7ysr1egy',
+    slug: 'evento-fullstack',
     password: 'password123',
     name: 'Evento de Desenvolvimento Fullstack',
     date: new Date('2024-12-01T10:00:00Z'),
@@ -18,7 +17,7 @@ const events: Event[] = [
     expectedAudience: 200,
     guests: [
       {
-        id: Id.new(),
+        id: '8whlo3mzapv-ebpzw9dpuw7-5z8z4g750y',
         name: 'Alice Silva',
         email: 'alice@example.com',
         confirmation: true,
@@ -26,7 +25,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: Id.new(),
+        id: 'pydav03ffi7-5jumufr9sfh-3o6yxoub3t3',
         name: 'Carlos Pereira',
         email: 'carlos@example.com',
         confirmation: false,
@@ -34,7 +33,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: Id.new(),
+        id: 'tu82ipxqpbe-w54bzt1x4g-1bwa8siig3p',
         name: 'Beatriz Lima',
         email: 'beatriz@example.com',
         confirmation: true,
@@ -44,8 +43,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'evento-js-avancado',
+    id: 'lz3isrhzq6b-b018vgum1ov-vmzaip3tlr',
+    slug: 'evento-js-avancado',
     password: 'js2024',
     name: 'Workshop Avançado de JavaScript',
     date: new Date('2024-11-20T15:00:00Z'),
@@ -58,7 +57,7 @@ const events: Event[] = [
     expectedAudience: 100,
     guests: [
       {
-        id: Id.new(),
+        id: 'p34xzfq4gi-k8o11o3iq6i-7s0k453vt7b',
         name: 'Eduardo Santos',
         email: 'eduardo@example.com',
         confirmation: true,
@@ -66,7 +65,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: Id.new(),
+        id: 'gwt56iykbts-2ckjtuqfn3b-ktjm88g3pep',
         name: 'Fernanda Costa',
         email: 'fernanda@example.com',
         confirmation: true,
@@ -76,8 +75,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'evento-dev-frontend',
+    id: 'kxre812frxa-aaktd3me9l-e5pn07ddovn',
+    slug: 'evento-dev-frontend',
     password: 'front123',
     name: 'Bootcamp de Desenvolvimento Frontend',
     date: new Date('2024-11-15T09:00:00Z'),
@@ -90,7 +89,7 @@ const events: Event[] = [
     expectedAudience: 150,
     guests: [
       {
-        id: Id.new(),
+        id: '99drawk4jqb-1aojptb4z68-pz2aea6o5m',
         name: 'Gabriela Rocha',
         email: 'gabriela@example.com',
         confirmation: true,
@@ -98,7 +97,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: Id.new(),
+        id: 'ui1h1o4dmie-mgtimn5kzbi-6ovt6ryy1n7',
         name: 'Hugo Nogueira',
         email: 'hugo@example.com',
         confirmation: false,
@@ -106,7 +105,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: Id.new(),
+        id: '7g0ac2zffv3-bj2w25xuzsp-iavbgwi3p4',
         name: 'Isabela Martins',
         email: 'isabela@example.com',
         confirmation: true,
@@ -116,8 +115,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'casamento-alberto-marina',
+    id: 'b2wznpt7ym-34mz652nv83-rsqnxmi0bvs',
+    slug: 'casamento-alberto-marina',
     password: 'casamento2024',
     name: 'Casamento do Alberto e Marina',
     date: new Date('2024-11-25T16:00:00Z'),
@@ -131,7 +130,7 @@ const events: Event[] = [
     expectedAudience: 150,
     guests: [
       {
-        id: Id.new(),
+        id: 'c8063ly75mp-aalwp0ptyse-rvik8jt4sz8',
         name: 'Bruno Cardoso',
         email: 'bruno@example.com',
         confirmation: true,
@@ -139,7 +138,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: Id.new(),
+        id: 's6r3f20izzt-7rv2774mn3k-sncjlbnwqc',
         name: 'Carla Mendes',
         email: 'carla@example.com',
         confirmation: true,
@@ -149,8 +148,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'aniversario-joao',
+    id: '4c5c2x2qs7h-0f4kffjae6a-ewyxspg0r8',
+    slug: 'aniversario-joao',
     password: 'joao2024',
     name: 'Aniversário do João - 30 Anos',
     date: new Date('2024-12-05T18:00:00Z'),
@@ -164,7 +163,7 @@ const events: Event[] = [
     expectedAudience: 80,
     guests: [
       {
-        id: Id.new(),
+        id: '20xwgkapixj-pxn1i6b3wh-jfqv33elup9',
         name: 'Maria Souza',
         email: 'maria@example.com',
         confirmation: true,
@@ -172,7 +171,7 @@ const events: Event[] = [
         quantityCompanions: 2
       },
       {
-        id: Id.new(),
+        id: 'siqtvdejb5l-eo3hb84i06o-bu6lygsqjmp',
         name: 'José Almeida',
         email: 'jose@example.com',
         confirmation: false,
@@ -182,8 +181,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'inauguracao-loja-estrela',
+    id: '8l212pv5uik-piyf459cp1-963i2ixzft',
+    slug: 'inauguracao-loja-estrela',
     password: 'estrela2024',
     name: 'Inauguração da Loja Estrela',
     date: new Date('2024-12-10T09:00:00Z'),
@@ -197,7 +196,7 @@ const events: Event[] = [
     expectedAudience: 300,
     guests: [
       {
-        id: Id.new(),
+        id: 'x5r4pz9sm3n-fbf4j4kpypr-sd7jlbryugs',
         name: 'Cláudia Lima',
         email: 'claudia@example.com',
         confirmation: true,
@@ -205,7 +204,7 @@ const events: Event[] = [
         quantityCompanions: 3
       },
       {
-        id: Id.new(),
+        id: 'usmv6mj2q4-1a9ri3jdetj-0568bqzwcf6b',
         name: 'Ricardo Barbosa',
         email: 'ricardo@example.com',
         confirmation: true,
@@ -215,8 +214,8 @@ const events: Event[] = [
     ]
   },
   {
-    id: Id.new(),
-    alias: 'reuniao-familia-oliveira',
+    id: '6dpm58cn874-2evh20q9ib6-ixq5ufj8u5e',
+    slug: 'reuniao-familia-oliveira',
     password: 'familia2024',
     name: 'Reunião da Família Oliveira',
     date: new Date('2024-12-15T12:00:00Z'),
@@ -229,7 +228,7 @@ const events: Event[] = [
     expectedAudience: 50,
     guests: [
       {
-        id: Id.new(),
+        id: '3851j2moa9f-kfbidsir45-e5ukmzy9eao',
         name: 'Thiago Oliveira',
         email: 'thiago@example.com',
         confirmation: true,
@@ -237,7 +236,7 @@ const events: Event[] = [
         quantityCompanions: 4
       },
       {
-        id: Id.new(),
+        id: '45eptrg71bw-z3dbdx8v5pl-8p59ayvcbwv',
         name: 'Letícia Oliveira',
         email: 'leticia@example.com',
         confirmation: true,
