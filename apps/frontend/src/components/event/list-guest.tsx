@@ -1,4 +1,4 @@
-import type { Guest } from '@/core'
+import type { Guest } from 'core'
 import GuestItem from './guest-item'
 
 export interface ListGuestProps {

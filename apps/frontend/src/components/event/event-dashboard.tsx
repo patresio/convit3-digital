@@ -1,4 +1,4 @@
-import type { Event, Guest } from '@/core'
+import type { Event, Guest } from 'core'
 import EventInformation from './event-information'
 import AccessViaQrCode from './access-via-qr-code'
 import Statics from '../shared/statics'

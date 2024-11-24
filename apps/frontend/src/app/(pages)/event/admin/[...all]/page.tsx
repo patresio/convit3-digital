@@ -1,7 +1,7 @@
 'use client'
-import { events, type Guest } from '@/core'
+import { events, type Guest } from 'core'
 import { use, useCallback, useEffect, useState } from 'react'
-import { Event } from '@/core'
+import { Event } from 'core'
 import EventDashboard from '@/components/event/event-dashboard'
 import FormEventPassword from '@/components/event/form-event-password'
 interface Params {
@@ -33,6 +33,8 @@ const AdminEvent = (props: any) => {
   useEffect(() => {
     getEvent()
   }, [getEvent, id])
+
+  console.log(event)
 
   return (
     <div className="flex flex-col items-center">

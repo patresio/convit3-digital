@@ -1,5 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Invitation = (props: any) => {
-  console.log(props)
   return <div>{props.params.slug}</div>
 }
 

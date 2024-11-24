@@ -1,4 +1,4 @@
-import type { Event } from '@/core'
+import type { Event } from 'core'
 import Information from '../shared/information'
 
 export interface EventInformationProps {
