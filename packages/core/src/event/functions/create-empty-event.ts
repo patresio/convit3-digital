@@ -1,4 +1,4 @@
-import { Event, Id } from '@/core'
+import { Event, Id } from '../../'
 
 export default function createEmptyEvent(): Partial<Event> {
   return {

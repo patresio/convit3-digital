@@ -1,4 +1,4 @@
-import { Event } from '@/core'
+import { Event } from '../../'
 // TODO: Add more validations and return an array of errors
 
 const validateEvent = (event: Partial<Event>): string[] => {

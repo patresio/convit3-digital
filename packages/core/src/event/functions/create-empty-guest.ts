@@ -1,4 +1,4 @@
-import { Id, type Guest } from '@/core'
+import { Id, type Guest } from '../../'
 
 const createEmptyGuest = (): Partial<Guest> => {
   return {

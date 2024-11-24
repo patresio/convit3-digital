@@ -1,12 +1,13 @@
 import type { Event } from '../event'
+import {} from '../shared'
 
 const events: Event[] = [
   {
-    id: '809xoae2dmv-tuad9sr7ce-vw7ysr1egy',
+    id: 'a83e31ce-ba20-4267-8293-99dbd87c8726',
     slug: 'evento-fullstack',
     password: 'password123',
     name: 'Evento de Desenvolvimento Fullstack',
-    date: new Date('2024-12-01T10:00:00Z'),
+    date: new Date(new Date('2024-12-01T10:00:00Z')),
     location: 'São Paulo, SP',
     description:
       'Um evento completo para aprender desenvolvimento fullstack do zero.',
@@ -17,7 +18,7 @@ const events: Event[] = [
     expectedAudience: 200,
     guests: [
       {
-        id: '8whlo3mzapv-ebpzw9dpuw7-5z8z4g750y',
+        id: 'd9b3cb9f-2dc3-432f-9583-5470862072c3',
         name: 'Alice Silva',
         email: 'alice@example.com',
         confirmation: true,
@@ -25,7 +26,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: 'pydav03ffi7-5jumufr9sfh-3o6yxoub3t3',
+        id: 'dab6235f-fcc8-46b4-a0f9-0c053df16ead',
         name: 'Carlos Pereira',
         email: 'carlos@example.com',
         confirmation: false,
@@ -33,7 +34,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: 'tu82ipxqpbe-w54bzt1x4g-1bwa8siig3p',
+        id: '3eed2119-a147-4366-b846-727cfbf45ba1',
         name: 'Beatriz Lima',
         email: 'beatriz@example.com',
         confirmation: true,
@@ -43,11 +44,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: 'lz3isrhzq6b-b018vgum1ov-vmzaip3tlr',
+    id: '3eed2119-a147-4366-b846-727cfbf45ba1',
     slug: 'evento-js-avancado',
     password: 'js2024',
     name: 'Workshop Avançado de JavaScript',
-    date: new Date('2024-11-20T15:00:00Z'),
+    date: new Date(new Date('2024-11-20T15:00:00Z')),
     location: 'Rio de Janeiro, RJ',
     description: 'Um workshop avançado para programadores JavaScript.',
     image:
@@ -57,7 +58,7 @@ const events: Event[] = [
     expectedAudience: 100,
     guests: [
       {
-        id: 'p34xzfq4gi-k8o11o3iq6i-7s0k453vt7b',
+        id: 'e62ef361-d64a-4ec5-873a-57e99a72aa8b',
         name: 'Eduardo Santos',
         email: 'eduardo@example.com',
         confirmation: true,
@@ -65,7 +66,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: 'gwt56iykbts-2ckjtuqfn3b-ktjm88g3pep',
+        id: '96ed00e5-dc50-4e7b-967f-a26b07afdb91',
         name: 'Fernanda Costa',
         email: 'fernanda@example.com',
         confirmation: true,
@@ -75,11 +76,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: 'kxre812frxa-aaktd3me9l-e5pn07ddovn',
+    id: '20449a23-79b7-4cbe-a85c-99063af3dd22',
     slug: 'evento-dev-frontend',
     password: 'front123',
     name: 'Bootcamp de Desenvolvimento Frontend',
-    date: new Date('2024-11-15T09:00:00Z'),
+    date: new Date(new Date('2024-11-15T09:00:00Z')),
     location: 'Belo Horizonte, MG',
     description: 'Aprenda a criar interfaces incríveis e responsivas.',
     image:
@@ -89,7 +90,7 @@ const events: Event[] = [
     expectedAudience: 150,
     guests: [
       {
-        id: '99drawk4jqb-1aojptb4z68-pz2aea6o5m',
+        id: '788e9478-c44c-4cf2-b206-295718519c1b',
         name: 'Gabriela Rocha',
         email: 'gabriela@example.com',
         confirmation: true,
@@ -97,7 +98,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: 'ui1h1o4dmie-mgtimn5kzbi-6ovt6ryy1n7',
+        id: '66f82b16-33ab-460d-af3e-4810ac4b7c24',
         name: 'Hugo Nogueira',
         email: 'hugo@example.com',
         confirmation: false,
@@ -105,7 +106,7 @@ const events: Event[] = [
         quantityCompanions: 0
       },
       {
-        id: '7g0ac2zffv3-bj2w25xuzsp-iavbgwi3p4',
+        id: '4930e017-aecf-4cd7-a0a3-f8cb25fb996e',
         name: 'Isabela Martins',
         email: 'isabela@example.com',
         confirmation: true,
@@ -115,11 +116,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: 'b2wznpt7ym-34mz652nv83-rsqnxmi0bvs',
+    id: 'c0400700-76c6-40a1-b1b1-c23dd366cb1b',
     slug: 'casamento-alberto-marina',
     password: 'casamento2024',
     name: 'Casamento do Alberto e Marina',
-    date: new Date('2024-11-25T16:00:00Z'),
+    date: new Date(new Date('2024-11-25T16:00:00Z')),
     location: 'Florianópolis, SC',
     description:
       'Celebração do casamento de Alberto e Marina com amigos e familiares.',
@@ -130,7 +131,7 @@ const events: Event[] = [
     expectedAudience: 150,
     guests: [
       {
-        id: 'c8063ly75mp-aalwp0ptyse-rvik8jt4sz8',
+        id: '5dd89215-0996-435e-ba7d-396612083cc6',
         name: 'Bruno Cardoso',
         email: 'bruno@example.com',
         confirmation: true,
@@ -138,7 +139,7 @@ const events: Event[] = [
         quantityCompanions: 1
       },
       {
-        id: 's6r3f20izzt-7rv2774mn3k-sncjlbnwqc',
+        id: '4ba39fdd-632c-47b4-b6db-797650a401db',
         name: 'Carla Mendes',
         email: 'carla@example.com',
         confirmation: true,
@@ -148,11 +149,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: '4c5c2x2qs7h-0f4kffjae6a-ewyxspg0r8',
+    id: 'b1501ae5-833d-43b2-8b48-5d1073c8e290',
     slug: 'aniversario-joao',
     password: 'joao2024',
     name: 'Aniversário do João - 30 Anos',
-    date: new Date('2024-12-05T18:00:00Z'),
+    date: new Date(new Date('2024-12-05T18:00:00Z')),
     location: 'Curitiba, PR',
     description:
       'Comemoração dos 30 anos de João com amigos próximos e familiares.',
@@ -163,7 +164,7 @@ const events: Event[] = [
     expectedAudience: 80,
     guests: [
       {
-        id: '20xwgkapixj-pxn1i6b3wh-jfqv33elup9',
+        id: '570690f4-a018-482f-9e83-f247aa7aa682',
         name: 'Maria Souza',
         email: 'maria@example.com',
         confirmation: true,
@@ -171,7 +172,7 @@ const events: Event[] = [
         quantityCompanions: 2
       },
       {
-        id: 'siqtvdejb5l-eo3hb84i06o-bu6lygsqjmp',
+        id: '6fdc14cf-3404-4996-908d-aaf9b6e6dba3',
         name: 'José Almeida',
         email: 'jose@example.com',
         confirmation: false,
@@ -181,11 +182,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: '8l212pv5uik-piyf459cp1-963i2ixzft',
+    id: 'c9b68f49-64fe-487b-abf0-877ff0556891',
     slug: 'inauguracao-loja-estrela',
     password: 'estrela2024',
     name: 'Inauguração da Loja Estrela',
-    date: new Date('2024-12-10T09:00:00Z'),
+    date: new Date(new Date('2024-12-10T09:00:00Z')),
     location: 'Porto Alegre, RS',
     description:
       'Evento de inauguração da nova loja Estrela com brindes e promoções.',
@@ -196,7 +197,7 @@ const events: Event[] = [
     expectedAudience: 300,
     guests: [
       {
-        id: 'x5r4pz9sm3n-fbf4j4kpypr-sd7jlbryugs',
+        id: '7e2d9640-480b-43c8-8e15-bc6f0d70c68d',
         name: 'Cláudia Lima',
         email: 'claudia@example.com',
         confirmation: true,
@@ -204,7 +205,7 @@ const events: Event[] = [
         quantityCompanions: 3
       },
       {
-        id: 'usmv6mj2q4-1a9ri3jdetj-0568bqzwcf6b',
+        id: '31f83341-23a1-48ad-b48b-a27752309878',
         name: 'Ricardo Barbosa',
         email: 'ricardo@example.com',
         confirmation: true,
@@ -214,11 +215,11 @@ const events: Event[] = [
     ]
   },
   {
-    id: '6dpm58cn874-2evh20q9ib6-ixq5ufj8u5e',
+    id: 'b33a12e2-5b3c-473d-8a2d-b48f0f525738',
     slug: 'reuniao-familia-oliveira',
     password: 'familia2024',
     name: 'Reunião da Família Oliveira',
-    date: new Date('2024-12-15T12:00:00Z'),
+    date: new Date(new Date('2024-12-15T12:00:00Z')),
     location: 'Salvador, BA',
     description: 'Reunião de fim de ano da família Oliveira.',
     image:
@@ -228,7 +229,7 @@ const events: Event[] = [
     expectedAudience: 50,
     guests: [
       {
-        id: '3851j2moa9f-kfbidsir45-e5ukmzy9eao',
+        id: 'a6f8816c-f243-4353-bdd5-309b2c1d2604',
         name: 'Thiago Oliveira',
         email: 'thiago@example.com',
         confirmation: true,
@@ -236,7 +237,7 @@ const events: Event[] = [
         quantityCompanions: 4
       },
       {
-        id: '45eptrg71bw-z3dbdx8v5pl-8p59ayvcbwv',
+        id: '8f99c8b4-1ea7-4c47-a4d1-6541cc9bff11',
         name: 'Letícia Oliveira',
         email: 'leticia@example.com',
         confirmation: true,

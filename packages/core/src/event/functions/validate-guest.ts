@@ -1,4 +1,4 @@
-import { Guest } from '@/core'
+import { Guest } from '../../'
 // TODO: Add more validations and return an array of errors
 
 const validateEvent = (guest: Partial<Guest>): string[] => {

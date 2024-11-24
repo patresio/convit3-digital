@@ -1,4 +1,4 @@
-import { Event, Id, Password } from '@/core'
+import { Event, Id, Password } from '../../'
 import validateEvent from './validate-event'
 
 const validateEventDataConsistency = (partialEvent: Partial<Event>): Event => {

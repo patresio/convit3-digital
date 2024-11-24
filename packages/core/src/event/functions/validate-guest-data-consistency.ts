@@ -1,4 +1,4 @@
-import { Guest, Id } from '@/core'
+import { Guest, Id } from '../../'
 import validateGuest from './validate-guest'
 
 const validateGuestDataConsistency = (partialGuest: Partial<Guest>): Guest => {
