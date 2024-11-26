@@ -1,6 +1,6 @@
 import { Guest, Id } from '../../'
 
-const createEmptyGuest = (): Partial<Guest> => {
+export default function createEmptyGuest(): Partial<Guest> {
   return {
     id: Id.new(),
     name: '',
@@ -10,5 +10,3 @@ const createEmptyGuest = (): Partial<Guest> => {
     quantityCompanions: 0
   }
 }
-
-export default createEmptyGuest

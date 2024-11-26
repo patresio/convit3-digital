@@ -1,7 +1,7 @@
 import { Guest } from '../../'
 // TODO: Add more validations and return an array of errors
 
-const validateEvent = (guest: Partial<Guest>): string[] => {
+export default function validateEvent(guest: Partial<Guest>): string[] {
   const errors: string[] = []
 
   if (!guest.name) {
@@ -19,5 +19,3 @@ const validateEvent = (guest: Partial<Guest>): string[] => {
 
   return errors
 }
-
-export default validateEvent

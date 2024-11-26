@@ -1,7 +1,7 @@
 import { Event } from '../../'
 // TODO: Add more validations and return an array of errors
 
-const validateEvent = (event: Partial<Event>): string[] => {
+export default function validateEvent(event: Partial<Event>): string[] {
   const errors: string[] = []
   if (!event.slug) {
     errors.push('Slug é obrigatorio')
@@ -30,5 +30,3 @@ const validateEvent = (event: Partial<Event>): string[] => {
 
   return errors
 }
-
-export default validateEvent

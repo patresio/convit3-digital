@@ -1,7 +1,9 @@
 import { Guest, Id } from '../../'
 import validateGuest from './validate-guest'
 
-const validateGuestDataConsistency = (partialGuest: Partial<Guest>): Guest => {
+export default function validateGuestDataConsistency(
+  partialGuest: Partial<Guest>
+): Guest {
   const errors = validateGuest(partialGuest)
 
   if (errors.length) {
@@ -23,5 +25,3 @@ const validateGuestDataConsistency = (partialGuest: Partial<Guest>): Guest => {
 
   return updatedGuest
 }
-
-export default validateGuestDataConsistency

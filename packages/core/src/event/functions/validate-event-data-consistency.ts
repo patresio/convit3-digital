@@ -1,7 +1,9 @@
 import { Event, Id, Password } from '../../'
 import validateEvent from './validate-event'
 
-const validateEventDataConsistency = (partialEvent: Partial<Event>): Event => {
+export default function validateEventDataConsistency(
+  partialEvent: Partial<Event>
+): Event {
   const errors = validateEvent(partialEvent)
   if (errors.length) {
     throw new Error(errors.join('\n'))
@@ -24,5 +26,3 @@ const validateEventDataConsistency = (partialEvent: Partial<Event>): Event => {
 
   return event
 }
-
-export default validateEventDataConsistency
