@@ -5,7 +5,7 @@ export class AppController {
   constructor() {}
 
   @Get('/ping')
-  ping(): string {
+  getPing(): string {
     return 'pong';
   }
 }

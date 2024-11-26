@@ -34,7 +34,7 @@ const AdminEvent = (props: any) => {
     getEvent()
   }, [getEvent, id])
 
-  console.log(event)
+
 
   return (
     <div className="flex flex-col items-center">
