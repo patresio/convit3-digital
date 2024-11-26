@@ -1,8 +1,44 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { Event, events, Id, utilsDate } from 'core';
+import {
+  Event,
+  events,
+  Id,
+  utilsDate,
+  validateEventDataConsistency,
+  validateGuestDataConsistency,
+  type Guest,
+} from 'core';
 
 @Controller('events')
 export class EventsController {
+  // Save Events and Guest
+  @Post()
+  async createEvent(@Body() body: { event: Event }) {
+    const newEvent = body.event;
+    const event = events.find((event) => event.slug === newEvent.slug);
+    if (event && event.id !== newEvent.id) {
+      throw new Error('Event already exists with this slug');
+    }
+    const eventComplete = validateEventDataConsistency(
+      this.deserializer(newEvent),
+    );
+    events.push(eventComplete);
+    return this.serializer(eventComplete);
+  }
+
+  @Post(':slug/guest')
+  async createGuest(
+    @Param('slug') slug: string,
+    @Body() body: { guest: Guest },
+  ) {
+    const event = events.find((event) => event.slug === slug);
+    if (!event) {
+      throw new Error('Event not found');
+    }
+    event.guests.push(validateGuestDataConsistency(body.guest));
+    return this.serializer(event);
+  }
+
   // ADMIN Events
   @Post('access/')
   async accessEvents(@Body() body: { id: string; password: string }) {

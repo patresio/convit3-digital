@@ -27,5 +27,20 @@ Content-Type: application/json
 
 {
   "id": "{{ event-id }}",
-  "password": "front1233"
+  "password": "front123"
+}
+
+###
+POST http://{{ hostname }}:{{ port }}/events/{{ event-slug }}/guest
+Content-Type: application/json
+
+{
+  "guest": {
+    "id": "7e2d9640-480b-43c8-8e15-bc6f0d70c68d",
+    "name": "Cláudia Lima",
+    "email": "claudia@example.com",
+    "confirmation": true,
+    "hasCompanions": true,
+    "quantityCompanions": 3
+  }
 }
