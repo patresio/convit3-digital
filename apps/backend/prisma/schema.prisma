@@ -9,7 +9,7 @@ datasource db {
 
 model Event {
   id               String   @id @default(uuid())
-  slug             String
+  slug             String   @unique
   name             String
   password         String
   date             DateTime
