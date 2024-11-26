@@ -17,6 +17,12 @@ export class EventsController {
     }
   }
 
+  @Get('validation/:slug/:id')
+  getValidEventSlug(@Param('id') id: string, @Param('slug') slug: string) {
+    const event = events.find((event) => event.slug === slug);
+    return { valid: !event || event.id === id };
+  }
+
   // methods private
 
   private serializer(event: Event) {

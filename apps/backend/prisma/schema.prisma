@@ -20,7 +20,7 @@ model Event {
   expectedAudience Int
   guest            Guest[]
 
-  @@map("eventos")
+  @@map("events")
 }
 
 model Guest {
@@ -33,5 +33,5 @@ model Guest {
   event              Event?  @relation(fields: [eventId], references: [id])
   eventId            String?
 
-  @@map("convidados")
+  @@map("guests")
 }
