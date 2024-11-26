@@ -44,3 +44,21 @@ Content-Type: application/json
     "quantityCompanions": 3
   }
 }
+
+####
+POST http://{{ hostname }}:{{ port }}/events/
+Content-Type: application/json
+
+{
+  "event": {
+    "password": "formacao123",
+    "name": "Evento Semana Formação .DEV",
+    "slug": "semana-formacao-dev",
+    "date": "2024-11-30T09:00:00Z",
+    "location": "Novo Horizonte, MG",
+    "description": "Aprenda a criar interfaces incríveis e responsivas.",
+    "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/recact_angular_vue.jpg",
+    "bgImage": "https://www.frontendmag.com/wp-content/uploads/2023/01/easiest-front-end-framework.jpeg",
+    "expectedAudience": 150
+  }
+}

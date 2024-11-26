@@ -1,4 +1,4 @@
-import type Guest from './guest'
+import Guest from './guest'
 
 export default interface Event {
   id: string

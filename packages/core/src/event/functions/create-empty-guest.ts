@@ -1,4 +1,5 @@
-import { Guest, Id } from '../../'
+import { Id } from '../../shared'
+import Guest from '../model/guest'
 
 export default function createEmptyGuest(): Partial<Guest> {
   return {
