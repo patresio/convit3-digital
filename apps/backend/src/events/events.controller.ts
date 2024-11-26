@@ -1,8 +1,21 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { Event, events, Id, utilsDate } from 'core';
 
 @Controller('events')
 export class EventsController {
+  // ADMIN Events
+  @Post('access/')
+  async accessEvents(@Body() body: { id: string; password: string }) {
+    const event = events.find(
+      (event) => event.id === body.id && event.password === body.password,
+    );
+    if (!event) {
+      throw new Error("Password or id doesn't match");
+    }
+    return this.serializer(event);
+  }
+
+  // GET Events
   @Get()
   asyncgetEvents() {
     return events.map(this.serializer);
@@ -18,7 +31,10 @@ export class EventsController {
   }
 
   @Get('validation/:slug/:id')
-  getValidEventSlug(@Param('id') id: string, @Param('slug') slug: string) {
+  async getValidEventSlug(
+    @Param('slug') slug: string,
+    @Param('id') id: string,
+  ) {
     const event = events.find((event) => event.slug === slug);
     return { valid: !event || event.id === id };
   }
@@ -35,7 +51,7 @@ export class EventsController {
     };
   }
 
-  private deserializer(event: any) {
+  private deserializer(event: any): Event {
     if (!event) {
       return null;
     }

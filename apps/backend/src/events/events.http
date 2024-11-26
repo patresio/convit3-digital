@@ -11,3 +11,21 @@ GET http://{{ hostname }}:{{ port }}/events/{{ event-slug }}
 
 ###
 GET http://{{ hostname }}:{{ port }}/events/{{ event-id }}
+
+
+###
+GET http://{{ hostname }}:{{ port }}/events/validation/inauguracao-loja-estrela/c9b68f49-64fe-487b-abf0-877ff0556891
+
+
+###
+GET http://{{ hostname }}:{{ port }}/events/validation/inauguracao-loja-estrela/{{ event-id }}
+
+
+###
+POST http://{{ hostname }}:{{ port }}/events/access
+Content-Type: application/json
+
+{
+  "id": "{{ event-id }}",
+  "password": "front1233"
+}
