@@ -1,0 +1,13 @@
+@hostname = 127.0.0.1
+@port = 4000
+@event-slug = casamento-alberto-marina
+@event-id = 20449a23-79b7-4cbe-a85c-99063af3dd22
+
+###
+GET http://{{ hostname }}:{{ port }}/events
+
+###
+GET http://{{ hostname }}:{{ port }}/events/{{ event-slug }}
+
+###
+GET http://{{ hostname }}:{{ port }}/events/{{ event-id }}
