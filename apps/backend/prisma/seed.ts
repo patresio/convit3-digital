@@ -16,7 +16,7 @@ async function seed() {
         image: event.image,
         bgImage: event.bgImage,
         expectedAudience: event.expectedAudience,
-        guest: {
+        guests: {
           create: event.guests.map((guest) => ({
             id: guest.id,
             name: guest.name,

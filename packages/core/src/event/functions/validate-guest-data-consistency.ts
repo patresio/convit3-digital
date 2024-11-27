@@ -1,4 +1,4 @@
-import { Guest, Id } from '../../'
+import Guest from '../model/guest'
 import validateGuest from './validate-guest'
 
 export default function validateGuestDataConsistency(
@@ -18,7 +18,6 @@ export default function validateGuestDataConsistency(
 
   const updatedGuest = {
     ...partialGuest,
-    id: partialGuest.id ?? Id.new(),
     quantityCompanions: hasCompanions ? quantityCompanions : 0,
     hasCompanions: hasCompanions
   } as Guest

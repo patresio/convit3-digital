@@ -1,29 +1,28 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import {
   Event,
-  events,
+  Guest,
   Id,
   utilsDate,
   validateEventDataConsistency,
   validateGuestDataConsistency,
-  type Guest,
 } from 'core';
+import { EventPrisma } from './event.prisma';
 
 @Controller('events')
 export class EventsController {
+  constructor(readonly repository: EventPrisma) {}
   // Save Events and Guest
   @Post()
-  async createEvent(@Body() body: { event: Event }) {
-    const newEvent = body.event;
-    const event = events.find((event) => event.slug === newEvent.slug);
-    if (event && event.id !== newEvent.id) {
-      throw new Error('Event already exists with this slug');
+  async createEvent(@Body() event: Event)  {
+    const existingEvent = await this.repository.findBySlug(event.slug);
+    if (existingEvent && existingEvent.id !== event.id) {
+      throw new Error('Exist event with same slug');
     }
     const eventComplete = validateEventDataConsistency(
-      this.deserializer(newEvent),
+      this.deserializer(event),
     );
-    events.push(eventComplete);
-    return this.serializer(eventComplete);
+    await this.repository.saveEvent(eventComplete);
   }
 
   @Post(':slug/guest')
@@ -31,21 +30,22 @@ export class EventsController {
     @Param('slug') slug: string,
     @Body() body: { guest: Guest },
   ) {
-    const event = events.find((event) => event.slug === slug);
+    const event = await this.repository.findBySlug(slug);
     if (!event) {
       throw new Error('Event not found');
     }
-    event.guests.push(validateGuestDataConsistency(body.guest));
-    return this.serializer(event);
-  }
+    const guestComplete = validateGuestDataConsistency(body.guest);
 
+    await this.repository.saveGuest(event, guestComplete);
+  }
   // ADMIN Events
   @Post('access/')
   async accessEvents(@Body() body: { id: string; password: string }) {
-    const event = events.find(
-      (event) => event.id === body.id && event.password === body.password,
-    );
+    const event = await this.repository.findById(body.id, true);
     if (!event) {
+      throw new Error('Event not found');
+    }
+    if (event.password !== body.password) {
       throw new Error("Password or id doesn't match");
     }
     return this.serializer(event);
@@ -53,16 +53,20 @@ export class EventsController {
 
   // GET Events
   @Get()
-  asyncgetEvents() {
+  async getEvents() {
+    const events = await this.repository.findAll();
     return events.map(this.serializer);
   }
 
   @Get(':idOrSlug')
   async getEvent(@Param('idOrSlug') idOrSlug: string) {
+    let event: Event = null;
     if (Id.validation(idOrSlug)) {
-      return this.serializer(events.find((event) => event.id === idOrSlug));
+      event = await this.repository.findById(idOrSlug);
+      return this.serializer(event);
     } else {
-      return this.serializer(events.find((event) => event.slug === idOrSlug));
+      event = await this.repository.findBySlug(idOrSlug);
+      return this.serializer(event);
     }
   }
 
@@ -71,7 +75,7 @@ export class EventsController {
     @Param('slug') slug: string,
     @Param('id') id: string,
   ) {
-    const event = events.find((event) => event.slug === slug);
+    const event = await this.repository.findBySlug(slug);
     return { valid: !event || event.id === id };
   }
 

@@ -1,4 +1,5 @@
-import { Event, Id, Password } from '../../'
+import { Id, Password } from '../../shared'
+import Event from '../model/event'
 import validateEvent from './validate-event'
 
 export default function validateEventDataConsistency(
@@ -12,16 +13,8 @@ export default function validateEventDataConsistency(
   const event: Event = {
     ...partialEvent,
     id: partialEvent.id ?? Id.new(),
-    slug: partialEvent.slug ?? '',
     password: partialEvent.password ?? Password.create(20),
-    name: partialEvent.name ?? '',
-    date: partialEvent.date ?? new Date(),
-    location: partialEvent.location ?? '',
-    description: partialEvent.description ?? '',
-    image: partialEvent.image ?? '',
-    bgImage: partialEvent.bgImage ?? '',
-    expectedAudience: Number(partialEvent.expectedAudience ?? 1),
-    guests: []
+    expectedAudience: Number(partialEvent.expectedAudience ?? 1)
   } as Event
 
   return event
