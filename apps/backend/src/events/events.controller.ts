@@ -1,4 +1,11 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  Param,
+  Post,
+} from '@nestjs/common';
 import {
   Event,
   Guest,
@@ -14,7 +21,7 @@ export class EventsController {
   constructor(readonly repository: EventPrisma) {}
   // Save Events and Guest
   @Post()
-  async createEvent(@Body() event: Event)  {
+  async createEvent(@Body() event: Event) {
     const existingEvent = await this.repository.findBySlug(event.slug);
     if (existingEvent && existingEvent.id !== event.id) {
       throw new Error('Exist event with same slug');
@@ -32,7 +39,7 @@ export class EventsController {
   ) {
     const event = await this.repository.findBySlug(slug);
     if (!event) {
-      throw new Error('Event not found');
+      throw new HttpException('Event not found', 400);
     }
     const guestComplete = validateGuestDataConsistency(body.guest);
 
@@ -43,10 +50,10 @@ export class EventsController {
   async accessEvents(@Body() body: { id: string; password: string }) {
     const event = await this.repository.findById(body.id, true);
     if (!event) {
-      throw new Error('Event not found');
+      throw new HttpException('Event not found', 400);
     }
     if (event.password !== body.password) {
-      throw new Error("Password or id doesn't match");
+      throw new HttpException("Password or id doesn't match", 400);
     }
     return this.serializer(event);
   }
