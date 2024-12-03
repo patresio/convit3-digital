@@ -1,10 +1,11 @@
 import { Text, View } from 'react-native'
-import { bgBlack, flex1, textWhite } from '@/style'
 
-export default function EventNotFound() {
+const EventNotFound = () => {
   return (
-    <View style={[bgBlack, flex1]}>
-      <Text style={[textWhite]}>Evento não encontrado</Text>
+    <View>
+      <Text>Event not found</Text>
     </View>
   )
 }
+
+export default EventNotFound

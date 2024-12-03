@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react'
-import { Event, events as eventsMock } from 'core'
+
+import { Event } from 'core'
 
 interface EventsContextProps {
   event: Event | null
@@ -14,7 +15,7 @@ const EventsContext = createContext<EventsContextProps>({} as any)
 
 export function EventsProvider(props: any) {
   const [event, setEvent] = useState<Event | null>(null)
-  const [events, setEvents] = useState<Event[]>(eventsMock)
+  const [events, setEvents] = useState<Event[]>([])
 
   const getEvent = (id: string) => {
     const event = events.find(event => event.id === id)
