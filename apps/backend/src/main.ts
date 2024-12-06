@@ -5,6 +5,6 @@ import ErrorFilter from './error.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   app.useGlobalFilters(new ErrorFilter());
-  await app.listen(process.env.PORT ?? 4000);
+  await app.listen(process.env.PORT ?? 4000, '0.0.0.0');
 }
 bootstrap();

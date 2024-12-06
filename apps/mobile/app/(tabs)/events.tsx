@@ -1,7 +1,8 @@
 import { Pressable, SafeAreaView, ScrollView } from 'react-native'
-import { bgBlack, flex1, gapY4, p4, py8 } from '@/style'
+import { alignCenter, bgBlack, flex1, gapY4, p4, py8 } from '@/style'
 
 import CardEvent from '@/components/event/card-event'
+import NewEvent from '@/components/event/new-event'
 import WithoutEvent from '@/components/event/without-event'
 import useEvents from '@/data/hooks/useEvents'
 import { useRouter } from 'expo-router'
@@ -13,7 +14,7 @@ export default function Index() {
   return (
     <SafeAreaView style={[flex1, bgBlack, p4]}>
       {events.length === 0 && <WithoutEvent />}
-      <ScrollView contentContainerStyle={[gapY4, py8]}>
+      <ScrollView contentContainerStyle={[gapY4, py8, alignCenter]}>
         {events.map(event => (
           <Pressable
             key={event.id}
@@ -22,6 +23,7 @@ export default function Index() {
             <CardEvent key={event.id} event={event} />
           </Pressable>
         ))}
+        <NewEvent />
       </ScrollView>
     </SafeAreaView>
   )

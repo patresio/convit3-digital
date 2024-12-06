@@ -46,7 +46,7 @@ export class EventsController {
     await this.repository.saveGuest(event, guestComplete);
   }
   // ADMIN Events
-  @Post('access/')
+  @Post('access')
   async accessEvents(@Body() body: { id: string; password: string }) {
     const event = await this.repository.findById(body.id, true);
     if (!event) {

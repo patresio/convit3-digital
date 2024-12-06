@@ -1,7 +1,8 @@
+# @hostname = 10.22.54.2
 @hostname = 127.0.0.1
 @port = 4000
 @event-slug = casamento-alberto-marina
-@event-id = 9cf79b78-435d-45a9-a6bc-83608b5d2c61
+@event-id = a83e31ce-ba20-4267-8293-99dbd87c8726
 
 ###
 GET http://{{ hostname }}:{{ port }}/events
@@ -27,7 +28,7 @@ Content-Type: application/json
 
 {
   "id": "{{ event-id }}",
-  "password": "qualquer1234"
+  "password": "password123"
 }
 
 ###

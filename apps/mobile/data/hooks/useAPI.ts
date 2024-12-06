@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-const urlBase = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000'
+const urlBase = process.env.EXPO_PUBLIC_API_URL
 
 export default function useAPI() {
   const httpGet = useCallback(async function (path: string) {
@@ -11,32 +11,31 @@ export default function useAPI() {
     return extractData(response)
   }, [])
 
-  const httpPost = useCallback(async function (path: string, body: any) {
+  const httpPost = useCallback(async function (path: string, body?: any) {
     const uri = path.startsWith('/') ? path : `/${path}`
     const urlComplete = `${urlBase}${uri}`
-
-    const response = await fetch(urlComplete, {
+    const resposta = await fetch(urlComplete, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: body ? JSON.stringify(body) : null
+      body: JSON.stringify(body)
     })
-    return extractData(response)
+    return extractData(resposta)
   }, [])
 
-  function extractData(response: Response) {
+  function extractData(resp: Response) {
     let context: any
 
     try {
-      context = response.json()
+      context = resp.json()
     } catch (error) {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
+      if (!resp.ok) {
+        throw new Error(`HTTP error! status: ${resp.status}`)
       }
       return null
     }
-    if (!response.ok) throw context
+    if (!resp.ok) throw context
     return context
   }
 

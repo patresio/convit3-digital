@@ -26,7 +26,9 @@ const WithoutEvent = () => {
           <Text style={[textZinc400, textLg]}>
             Ainda não tem nenhum evento cadastrado
           </Text>
-          <Text style={[textZinc400, textLg]}>Vamos escanear um QR Code?</Text>
+          <Text style={[textZinc400, textLg]}>
+            Vamos escanear um QR Code? :)
+          </Text>
         </View>
         <Image
           source={require('@/assets/images/triangulo.png')}

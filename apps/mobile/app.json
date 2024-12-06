@@ -40,6 +40,16 @@
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
           "recordAudioAndroid": true
         }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "permissions": "android.permission.INTERNET",
+            "usesCleartextTraffic": true,
+            "networkSecurityConfig": "@xml/network_security_config"
+          }
+        }
       ]
     ],
     "experiments": {
