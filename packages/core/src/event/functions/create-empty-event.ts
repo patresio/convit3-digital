@@ -1,5 +1,5 @@
-import { Event } from '../../event'
 import { Id } from '../../shared'
+import Event from '../model/event'
 
 export default function createEmptyEvent(): Partial<Event> {
   return {
