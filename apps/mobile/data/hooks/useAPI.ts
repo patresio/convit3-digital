@@ -24,11 +24,11 @@ export default function useAPI() {
     return extractData(resposta)
   }, [])
 
-  function extractData(resp: Response) {
+  async function extractData(resp: Response) {
     let context: any
 
     try {
-      context = resp.json()
+      context = await resp.json()
     } catch (error) {
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`)

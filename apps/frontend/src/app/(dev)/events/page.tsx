@@ -4,9 +4,10 @@ import Link from 'next/link'
 import QRCode from 'react-qr-code'
 
 const eventsPage = () => {
+
   return (
     <div className="grid grid-cols-3 gap-5">
-      {events.map(event => (
+      {events.map((event) => (
         <div
           key={event.id}
           className="flex flex-col bg-zinc-700 overflow-hidden rounded-lg w-full"

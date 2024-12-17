@@ -8,10 +8,11 @@ import {
   utilsDate
 } from 'core'
 import useAPI from '../hooks/useAPI'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export interface EventContextProps {
   event: Partial<Event>
+  events: Event[] | any
   guest: Partial<Guest>
   validSlug: boolean
 
@@ -19,6 +20,7 @@ export interface EventContextProps {
   alterGuest(guest: Partial<Guest>): void
 
   loadEvent(idOrSlug: string): Promise<void>
+  loadEvents(): Promise<void>
   saveEvent(): Promise<void>
 
   addGuest(): void
@@ -29,11 +31,23 @@ const EventContext = createContext<EventContextProps>({} as any)
 export function EventContextProvider(props: any) {
   const { httpPost, httpGet } = useAPI()
   const router = useRouter()
-
+  
   const [validSlug, setValidSlug] = useState(true)
+  
+  // TODO: useLocalStorage for load events
+  const [events, setEvents] = useState<Event[]>()
 
   const [event, setEvent] = useState<Partial<Event>>(createEmptyEvent())
   const [guest, setGuest] = useState<Partial<Guest>>(createEmptyGuest())
+
+  const loadEvents = useCallback(async function () {
+    try {
+      const events = await httpGet('/events')
+      setEvents(events)
+    } catch (error) {
+      console.error(error)
+    }
+  }, [httpGet])
 
   const saveEvent = useCallback(
     async function () {
@@ -103,11 +117,13 @@ export function EventContextProvider(props: any) {
       value={{
         event,
         guest,
+        events,
         validSlug,
         alterEvent: setEvent,
         alterGuest: setGuest,
         saveEvent,
         loadEvent,
+        loadEvents,
         addGuest
       }}
     >

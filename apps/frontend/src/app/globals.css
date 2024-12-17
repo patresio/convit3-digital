@@ -54,4 +54,8 @@ body {
   .button.tertiary:hover {
     @apply bg-green-600;
   }
+
+  input {
+    color-scheme: dark;
+  }
 }

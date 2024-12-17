@@ -14,21 +14,21 @@ export default function useAPI() {
   const httpPost = useCallback(async function (path: string, body?: any) {
     const uri = path.startsWith('/') ? path : `/${path}`
     const urlComplete = `${urlBase}${uri}`
-    const resposta = await fetch(urlComplete, {
+    const resp = await fetch(urlComplete, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
     })
-    return extractData(resposta)
+    return extractData(resp)
   }, [])
 
-  function extractData(resp: Response) {
+  async function extractData(resp: Response) {
     let context: any
 
     try {
-      context = resp.json()
+      context = await resp.json()
     } catch (error) {
       if (!resp.ok) {
         throw new Error(`HTTP error ${error}! status: ${resp.status}`)
