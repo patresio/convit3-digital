@@ -16,8 +16,9 @@ const CopyClipboard = (props: CopyClipboardProps) => {
   return (
     <div className="flex flex-col gap-2">
       <span>{props.label}</span>
-      <div>
-        <span>{props.text}</span>
+      <div className="flex items-center gap-3 bg-black border border-zinc-800 px-4 py-2 text-zinc-300 text-lg">
+        {props.icon && <props.icon stroke={1.3} />}
+        <span className='flex-1'>{props.text}</span>
         <IconCopy className="cursor-pointer" stroke={1.3} onClick={copyText} />
       </div>
       {props.observation && (

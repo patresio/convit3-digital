@@ -24,12 +24,13 @@ export class EventsController {
   async createEvent(@Body() event: Event) {
     const existingEvent = await this.repository.findBySlug(event.slug);
     if (existingEvent && existingEvent.id !== event.id) {
-      throw new Error('Exist event with same slug');
+      throw new HttpException('Exist event with same slug', 400);
     }
     const eventComplete = validateEventDataConsistency(
       this.deserializer(event),
     );
     await this.repository.saveEvent(eventComplete);
+    return this.serializer(eventComplete);
   }
 
   @Post(':slug/guest')

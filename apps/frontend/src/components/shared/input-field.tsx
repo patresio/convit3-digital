@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface InputFieldProps extends React.HTMLProps<HTMLInputElement> {
-  label: string
+  label?: string
   value: string | number
   type?: string
   onChange: (event: any) => void

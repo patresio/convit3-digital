@@ -6,7 +6,7 @@ export interface AccessViaQrCodeProps {
 }
 const AccessViaQrCode = (props: AccessViaQrCodeProps) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 border border-zinc-800 px-10">
+    <div className="flex flex-col items-center justify-center gap-4 border border-zinc-800 px-10 py-12">
       <span className="text-sm font-light text-zinc-400">
         Acesse via Mobile
       </span>
