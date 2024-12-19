@@ -34,17 +34,15 @@ export class EventsController {
   }
 
   @Post(':slug/guest')
-  async createGuest(
-    @Param('slug') slug: string,
-    @Body() body: { guest: Guest },
-  ) {
+  async createGuest(@Param('slug') slug: string, @Body() guest: Guest) {
     const event = await this.repository.findBySlug(slug);
     if (!event) {
       throw new HttpException('Event not found', 400);
     }
-    const guestComplete = validateGuestDataConsistency(body.guest);
+    const guestComplete = validateGuestDataConsistency(guest);
 
     await this.repository.saveGuest(event, guestComplete);
+    return this.serializer(event);
   }
   // ADMIN Events
   @Post('access')
