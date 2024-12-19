@@ -51,6 +51,7 @@ const AdminEvent = (props: any) => {
           presence={presence}
           absent={absent}
           totalGeral={totalGeral}
+          reloadGuestList={getEvent}
         />
       ) : (
           <FormEventPassword

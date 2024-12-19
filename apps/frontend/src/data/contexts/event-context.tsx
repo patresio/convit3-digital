@@ -9,6 +9,7 @@ import {
 } from 'core'
 import useAPI from '../hooks/useAPI'
 import { useRouter } from 'next/navigation'
+import useMessages from '../hooks/useMessages'
 
 export interface EventContextProps {
   event: Partial<Event>
@@ -30,6 +31,9 @@ const EventContext = createContext<EventContextProps>({} as any)
 
 export function EventContextProvider(props: any) {
   const { httpPost, httpGet } = useAPI()
+
+  const { addError } = useMessages()
+
   const router = useRouter()
   
   const [validSlug, setValidSlug] = useState(true)
@@ -44,10 +48,10 @@ export function EventContextProvider(props: any) {
     try {
       const events = await httpGet('/events')
       setEvents(events)
-    } catch (error) {
-      console.error(error)
+    } catch (error: any) {
+      addError(error.message ?? 'Ocorreu um erro inesperado')
     }
-  }, [httpGet])
+  }, [httpGet, addError])
 
   const saveEvent = useCallback(
     async function () {
@@ -58,11 +62,11 @@ export function EventContextProvider(props: any) {
           ...createEvent,
           date: utilsDate.parse(createEvent.date)
         })
-      } catch (error) {
-        console.error(error)
+      } catch (error: any) {
+        addError(error.message ?? 'Ocorreu um erro inesperado')
       }
     },
-    [event, httpPost, router]
+    [event, httpPost, router, addError]
   )
 
   const saveGuest = useCallback(
@@ -70,11 +74,11 @@ export function EventContextProvider(props: any) {
       try {
         await httpPost(`/events/${event.slug}/guest`, guest)
         router.push('/invitation/thank-you')
-      } catch (error) {
-        console.error(error)
+      } catch (error: any) {
+        addError(error.message ?? 'Ocorreu um erro inesperado')
       }
     },
-    [httpPost, event, guest, router]
+    [httpPost, event, guest, router, addError]
   )
 
   const loadEvent = useCallback(
@@ -87,11 +91,11 @@ export function EventContextProvider(props: any) {
           date: utilsDate.parse(event.date)
         })
         setValidSlug(true)
-      } catch (error) {
-        console.error(error)
+      } catch (error: any) {
+        addError(error.message ?? 'Ocorreu um erro inesperado')
       }
     },
-    [httpGet, setEvent]
+    [httpGet, setEvent, addError]
   )
 
   
@@ -103,11 +107,11 @@ export function EventContextProvider(props: any) {
           `/events/validation/${event.slug}/${event.id}`
         )
         setValidSlug(valid)
-      } catch (error) {
-        console.error(error)
+      } catch (error: any) {
+        addError(error.message ?? 'Ocorreu um erro inesperado')
       }
     },
-    [httpGet, event]
+    [httpGet, event, addError]
   )
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+import useMessages from '@/data/hooks/useMessages'
 import { IconCopy } from '@tabler/icons-react'
 import type React from 'react'
 
@@ -9,8 +10,12 @@ export interface CopyClipboardProps {
 }
 
 const CopyClipboard = (props: CopyClipboardProps) => {
+
+  const {addSuccess} = useMessages()
+
   function copyText() {
     navigator.clipboard.writeText(props.text)
+    addSuccess('Texto copiado para área de transferência')
   }
 
   return (

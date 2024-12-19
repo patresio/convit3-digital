@@ -9,6 +9,7 @@ export interface EventDashboardProps {
   presence: Guest[]
   absent: Guest[]
   totalGeral: number
+  reloadGuestList: () => void
 }
 
 const EventDashboard = (props: EventDashboardProps) => {
@@ -35,7 +36,9 @@ const EventDashboard = (props: EventDashboardProps) => {
           image="/icones/acompanhantes.svg"
         />
       </div>
-      <button className="button primary self-end mt-12">
+      <button className="button primary self-end mt-12"
+       onClick={props.reloadGuestList}
+      >
         <span>Atualizar Lista de Convidados</span>
       </button>
       <span className="flex py-2 text-xl font-bold text-white/80">
