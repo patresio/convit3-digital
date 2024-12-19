@@ -14,6 +14,10 @@ export default function useAPI() {
   const httpPost = useCallback(async function (path: string, body?: any) {
     const uri = path.startsWith('/') ? path : `/${path}`
     const urlComplete = `${urlBase}${uri}`
+
+    // TODO: remover
+    console.log(urlComplete, body)
+
     const resp = await fetch(urlComplete, {
       method: 'POST',
       headers: {

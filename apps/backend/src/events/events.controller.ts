@@ -42,7 +42,7 @@ export class EventsController {
     const guestComplete = validateGuestDataConsistency(guest);
 
     await this.repository.saveGuest(event, guestComplete);
-    return this.serializer(event);
+    return 'success';
   }
   // ADMIN Events
   @Post('access')

@@ -1,7 +1,7 @@
 # @hostname = 10.22.54.2
-@hostname = 127.0.0.1
+@hostname = localhost
 @port = 4000
-@event-slug = casamento-alberto-marina
+@event-slug = masterclass-python-django
 @event-id = a83e31ce-ba20-4267-8293-99dbd87c8726
 
 ###
@@ -36,13 +36,11 @@ POST http://{{ hostname }}:{{ port }}/events/{{ event-slug }}/guest
 Content-Type: application/json
 
 {
-  "guest": {
     "name": "Ricardo Pereira",
     "email": "patrese@example.com",
     "confirmation": true,
     "hasCompanions": true,
-    "quantityCompanions": 3
-  }
+    "quantityCompanions": 5
 }
 
 ####

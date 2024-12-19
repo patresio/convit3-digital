@@ -23,7 +23,7 @@ export interface EventContextProps {
   loadEvents(): Promise<void>
   saveEvent(): Promise<void>
 
-  addGuest(): void
+  saveGuest(): void
 }
 
 const EventContext = createContext<EventContextProps>({} as any)
@@ -65,6 +65,18 @@ export function EventContextProvider(props: any) {
     [event, httpPost, router]
   )
 
+  const saveGuest = useCallback(
+    async function () {
+      try {
+        await httpPost(`/events/${event.slug}/guest`, guest)
+        router.push('/invitation/thank-you')
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    [httpPost, event, guest, router]
+  )
+
   const loadEvent = useCallback(
     async function (idOrSlug: string) {
       try {
@@ -81,18 +93,7 @@ export function EventContextProvider(props: any) {
     [httpGet, setEvent]
   )
 
-  const addGuest = useCallback(
-    async function () {
-      try {
-        const createGuest = await httpPost(`/events/${event.slug}/guest`, guest)
-        router.push('/invitation/thank-you')
-        setGuest(createGuest)
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    [httpPost, event, guest, router]
-  )
+  
 
   const validateSlug = useCallback(
     async function () {
@@ -124,7 +125,7 @@ export function EventContextProvider(props: any) {
         saveEvent,
         loadEvent,
         loadEvents,
-        addGuest
+        saveGuest
       }}
     >
       {props.children}
