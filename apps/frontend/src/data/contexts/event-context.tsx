@@ -81,6 +81,7 @@ export function EventContextProvider(props: any) {
     async function (idOrSlug: string) {
       try {
         const event = await httpGet(`/events/${idOrSlug}`)
+        if (!event) return
         setEvent({
           ...event,
           date: utilsDate.parse(event.date)
