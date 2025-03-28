@@ -1,7 +1,7 @@
 # ✉️ Convit3 Digital
 
 <div align="center">
-<img src="https://github.com/patresio/convit3-digital/raw/main/.gitassets/capa.png" width="350" />
+<img src="https://github.com/patresio/convit3-digital/raw/master/.gitassets/capa.png" width="350" />
 
 <div data-badges>
     <img src="https://img.shields.io/github/stars/patresio/convit3-digital?style=for-the-badge" alt="GitHub stars" />
@@ -75,11 +75,11 @@ A plataforma vai além, permitindo que os organizadores acompanhem, em tempo rea
 - Acompanhamento de confirmações de presença (RSVP)
 - Dashboard de eventos
 
-![](https://github.com/patresio/convit3-digital/raw/main/.gitassets/2.jpg)
+![](https://github.com/patresio/convit3-digital/raw/master/.gitassets/2.jpg)
 
-![](https://github.com/patresio/convit3-digital/raw/main/.gitassets/3.jpg)
+![](https://github.com/patresio/convit3-digital/raw/master/.gitassets/3.jpg)
 
-![](https://github.com/patresio/convit3-digital/raw/main/.gitassets/4.jpg)
+![](https://github.com/patresio/convit3-digital/raw/master/.gitassets/4.jpg)
 
 ## 💎 Links úteis 💎
 
